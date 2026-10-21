@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <title>Odabir računarske opreme</title>
+</head>
+<body>
+
+    <h1>Odabir računarske opreme</h1>
+
+    <form>
+
+        <label for="ime">Ime i prezime:</label>
+        <input type="text" id="ime" name="ime">
+
+        <br><br>
+
+        <label for="racunar">Vrsta računara:</label>
+        <select id="racunar" name="racunar">
+            <option value="laptop">Laptop</option>
+            <option value="desktop">Desktop računar</option>
+            <option value="tablet">Tablet</option>
+        </select>
+
+        <br><br>
+
+        <p>Koji operativni sistem preferirate?</p>
+
+        <input type="radio" id="windows" name="sistem" value="Windows">
+        <label for="windows">Windows</label>
+
+        <input type="radio" id="linux" name="sistem" value="Linux">
+        <label for="linux">Linux</label>
+
+        <input type="radio" id="macos" name="sistem" value="macOS">
+        <label for="macos">macOS</label>
+
+        <br><br>
+
+        <p>Koju dodatnu opremu želite?</p>
+
+        <input type="checkbox" id="mis" name="oprema" value="Mis">
+        <label for="mis">Miš</label>
+
+        <input type="checkbox" id="tastatura" name="oprema" value="Tastatura">
+        <label for="tastatura">Tastatura</label>
+
+        <input type="checkbox" id="slusalice" name="oprema" value="Slusalice">
+        <label for="slusalice">Slušalice</label>
+
+        <br><br>
+
+        <label for="napomena">Dodatne napomene:</label>
+        <br>
+        <textarea id="napomena" name="napomena" rows="4" cols="30"></textarea>
+
+        <br><br>
+
+        <button type="button">Slanje nije omogućeno</button>
+
+    </form>
+
+</body>
+</html>
+
