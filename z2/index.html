@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="bs">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Obavijest</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 32rem;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        label,
+        fieldset {
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        input[type="text"],
+        textarea {
+            display: block;
+            width: 100%;
+            font: inherit;
+            padding: .4rem;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+        }
+
+        #greska {
+            color: #b00020;
+            font-weight: bold;
+        }
+
+        #pregled {
+            margin-top: 1.5rem;
+            padding: .5rem 1rem;
+            border-left: 5px solid #999;
+        }
+
+        #pregled-tekst {
+            white-space: pre-wrap;
+        }
+
+        .oznaka {
+            padding: .1rem .5rem;
+            color: #fff;
+            font-size: .85rem;
+        }
+
+        #pregled.informacija {
+            border-left-color: #2a6fb0;
+            background: #eef5fb;
+        }
+
+        #pregled.informacija .oznaka {
+            background: #2a6fb0;
+        }
+
+        #pregled.upozorenje {
+            border-left-color: #c0392b;
+            background: #fdeeee;
+        }
+
+        #pregled.upozorenje .oznaka {
+            background: #c0392b;
+        }
+
+        #pregled.upozorenje h2 {
+            color: #c0392b;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Nova obavijest</h1>
+
+    <form id="forma" novalidate>
+        <label>Naslov
+            <input type="text" id="naslov" maxlength="80">
+        </label>
+
+        <label>Tekst obavijesti
+            <textarea id="tekst" rows="4" maxlength="300"></textarea>
+        </label>
+
+        <fieldset>
+            <legend>Kategorija</legend>
+            <label><input type="radio" name="kategorija" value="informacija" checked> Informacija</label>
+            <label><input type="radio" name="kategorija" value="upozorenje"> Upozorenje</label>
+        </fieldset>
+
+        <p id="greska" role="alert" hidden></p>
+
+        <button type="submit" id="pregled-dugme">Pregled</button>
+        <button type="button" id="vrati-dugme">Vrati formu u početno stanje</button>
+    </form>
+
+    <section id="pregled" aria-live="polite">
+        <span class="oznaka" id="pregled-oznaka" hidden></span>
+        <h2 id="pregled-naslov">Pregled još nije napravljen</h2>
+        <p id="pregled-tekst">Popunite formu i kliknite „Pregled“.</p>
+    </section>
+
+    <script src="obavijest.js"></script>
+</body>
+
+</html>

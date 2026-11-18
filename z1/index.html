@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="bs">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Priprema za planinarski izlet</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 32rem;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            padding: .5rem 0;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        li.zavrsena .tekst {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        .status {
+            display: block;
+            font-size: .8rem;
+            color: gray;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Priprema za planinarski izlet</h1>
+    <p id="sazetak">Završeno: 0 od 7</p>
+
+    <ul id="lista">
+        <li>
+            <span><span class="tekst">Provjeriti vremensku prognozu</span><span class="status">Nije završeno</span></span>
+            <button type="button" class="promijeni">Označi kao završeno</button>
+        </li>
+        <li>
+            <span><span class="tekst">Spakovati dovoljno vode</span><span class="status">Nije završeno</span></span>
+            <button type="button" class="promijeni">Označi kao završeno</button>
+        </li>
+        <li>
+            <span><span class="tekst">Obući planinarske cipele i slojevitu odjeću</span><span class="status">Nije
+                    završeno</span></span>
+            <button type="button" class="promijeni">Označi kao završeno</button>
+        </li>
+        <li>
+            <span><span class="tekst">Ponijeti hranu i užinu</span><span class="status">Nije završeno</span></span>
+            <button type="button" class="promijeni">Označi kao završeno</button>
+        </li>
+        <li>
+            <span><span class="tekst">Napuniti telefon i preuzeti mapu staze</span><span class="status">Nije
+                    završeno</span></span>
+            <button type="button" class="promijeni">Označi kao završeno</button>
+        </li>
+        <li>
+            <span><span class="tekst">Spakovati prvu pomoć i kabanicu</span><span class="status">Nije
+                    završeno</span></span>
+            <button type="button" class="promijeni">Označi kao završeno</button>
+        </li>
+        <li>
+            <span><span class="tekst">Obavijestiti nekoga o planiranoj ruti</span><span class="status">Nije
+                    završeno</span></span>
+            <button type="button" class="promijeni">Označi kao završeno</button>
+        </li>
+    </ul>
+
+    <button type="button" id="reset">Vrati sve u početno stanje</button>
+
+    <script src="skripta.js"></script>
+</body>
+
+</html>

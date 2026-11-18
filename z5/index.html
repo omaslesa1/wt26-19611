@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+<meta charset="UTF-8">
+<title>Zapremina sfere</title>
+<style>
+  body { font-family: Georgia, "Times New Roman", serif; font-size: 18px; margin: 30px; }
+  label { display: block; }
+  input[type="text"] { width: 240px; font-size: 16px; padding: 3px; margin-bottom: 4px; display: block; }
+</style>
+</head>
+<body>
+
+<label for="radius">Radius</label>
+<input type="text" id="radius">
+
+<label for="volume">Volume</label>
+<input type="text" id="volume" value="0.0000" readonly>
+
+<input type="button" id="calculate" value="Calculate" onclick="izracunaj()">
+
+<script>
+function izracunaj() {
+  var r = parseFloat(document.getElementById("radius").value.replace(",", "."));
+  var polje = document.getElementById("volume");
+
+  if (isNaN(r) || r < 0) {
+    alert("Unesite ispravnu nenegativnu vrijednost radijusa.");
+    polje.value = "0.0000";
+    return;
+  }
+
+  var v = (4 / 3) * Math.PI * Math.pow(r, 3);
+  polje.value = v.toFixed(4);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="bs">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Evidencija troškova</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 32rem;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: .75rem;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            font: inherit;
+            padding: .4rem;
+        }
+
+        #greska {
+            color: #b00020;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th,
+        td {
+            padding: .4rem;
+            border-bottom: 1px solid #ccc;
+            text-align: left;
+        }
+
+        .iznos,
+        thead th:last-child,
+        tfoot td {
+            text-align: right;
+        }
+
+        tfoot th,
+        tfoot td {
+            font-weight: bold;
+            border-top: 2px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Evidencija troškova</h1>
+
+    <form id="forma" novalidate>
+        <label>Naziv
+            <input type="text" id="naziv" maxlength="40" autocomplete="off">
+        </label>
+        <label>Iznos (KM)
+            <input type="text" id="iznos" inputmode="decimal" autocomplete="off">
+        </label>
+        <p id="greska" role="alert" hidden></p>
+        <button type="submit">Dodaj trošak</button>
+    </form>
+
+    <table id="tabela">
+        <thead>
+            <tr>
+                <th>Naziv</th>
+                <th>Iznos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Prijevoz</td>
+                <td class="iznos" data-centi="1250">12,50 KM</td>
+            </tr>
+            <tr>
+                <td>Namirnice</td>
+                <td class="iznos" data-centi="4530">45,30 KM</td>
+            </tr>
+            <tr>
+                <td>Internet</td>
+                <td class="iznos" data-centi="3000">30,00 KM</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th scope="row">Ukupno (stavki: <span id="broj">3</span>)</th>
+                <td id="zbir">87,80 KM</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script src="evidencija.js"></script>
+</body>
+
+</html>
